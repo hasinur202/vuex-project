@@ -10,7 +10,7 @@
             <p class="card-text">{{ product.description }}</p>
           </div>
           <div class="px-4 pb-3">
-              <button class="btn btn-secondary btn-sm">Add to Cart</button>
+              <button @click="addToCart()" class="btn btn-secondary btn-sm">Add to Cart</button>
           </div>
         </div>
     </div>
@@ -18,7 +18,16 @@
 
 <script>
 export default {
-  props: ["product"]
+  props: ["product"],
+
+  methods:{
+    addToCart(){
+      this.$store.dispatch('addProductToCart', {
+        product: this.product,
+        quantity:1
+      });
+    }
+  }
 }
 </script>
 

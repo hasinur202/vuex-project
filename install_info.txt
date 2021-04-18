@@ -1,0 +1,16 @@
+Laravel Api
+==============
+cd laravel-api
+composer install
+[setup .env with your database]
+php artisan migrate
+php artisan db:seed
+php artisan serve
+
+
+Vuex Project
+=================
+cd vuex-tutorial
+npm install
+
+npm run serve

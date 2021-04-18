@@ -1,9 +1,13 @@
 <template>
-  <div>Home</div>
+  <div>
+      <product-list/>
+  </div>
 </template>
 
 <script>
+import ProductList from '../components/ProductList.vue'
 export default {
+  components: { ProductList },
 
 }
 </script>

@@ -1,10 +1,13 @@
 <template>
-<div class="d-flex align-items-lg-stretch flex-wrap">
-    <product-card/>
-    <product-card/>
-    <product-card/>
-    <product-card/>
-</div>
+
+    <div class="d-flex align-items-lg-stretch flex-wrap">
+        <product-card/>
+        <product-card/>
+        <product-card/>
+        <product-card/>
+        <product-card/>
+        <product-card/>
+    </div>
   
 </template>
 

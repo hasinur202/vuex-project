@@ -4,10 +4,10 @@
       <div class="container">
           <ul class="nav navbar-nav">
               <li class="nav-item active">
-                  <a class="nav-link" href="#">Home</a>
+                  <router-link to="/" class="nav-link active">Home</router-link>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="#">Product</a>
+                  <router-link to="/product" class="nav-link">Product</router-link>
               </li>
           </ul>
 

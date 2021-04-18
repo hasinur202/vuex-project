@@ -3,14 +3,14 @@
         <div class="card h-100 text-left">
           <img class="card-img-top w-100" src="https://via.placeholder.com/150x100" alt="">
           <div class="card-body">
-            <h4 class="card-title">
-                <a href="#">Product title</a>
-            </h4>
+            <h5 class="card-title">
+                <router-link :to="{ name: 'product', params: {id:23}}">Product title</router-link>
+            </h5>
             <strong>$23</strong>
             <p class="card-text">Lorem ipsum dolor sit amet.</p>
           </div>
           <div class="px-4 pb-3">
-              <button class="btn btn-secondary">Add to Cart</button>
+              <button class="btn btn-secondary btn-sm">Add to Cart</button>
           </div>
         </div>
     </div>

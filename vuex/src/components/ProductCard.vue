@@ -1,13 +1,13 @@
 <template>
       <div class="col-3 mt-3">
         <div class="card h-100 text-left">
-          <img class="card-img-top w-100" src="https://via.placeholder.com/150x100" alt="">
+          <img class="card-img-top w-100" :src="product.image" alt="">
           <div class="card-body">
             <h5 class="card-title">
-                <router-link :to="{ name: 'product', params: {id:23}}">Product title</router-link>
+                <router-link :to="{ name: 'product', params: {id:product.id}}">{{ product.title }}</router-link>
             </h5>
-            <strong>$23</strong>
-            <p class="card-text">Lorem ipsum dolor sit amet.</p>
+            <strong>${{ product.price }}</strong>
+            <p class="card-text">{{ product.description }}</p>
           </div>
           <div class="px-4 pb-3">
               <button class="btn btn-secondary btn-sm">Add to Cart</button>
@@ -18,7 +18,7 @@
 
 <script>
 export default {
-
+  props: ["product"]
 }
 </script>
 

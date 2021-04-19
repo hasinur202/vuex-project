@@ -15,7 +15,9 @@ export default {
   },
 
   computed: {
-    ...mapState(["products"]),
+    ...mapState({
+      products: state => state.product.products,
+    }),
     // products(){
     //   return this.$store.state.products;
     // }

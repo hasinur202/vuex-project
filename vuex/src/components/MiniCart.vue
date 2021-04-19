@@ -35,7 +35,9 @@ export default {
         // }
     },
     computed: {
-        ...mapState(['cart']),
+        ...mapState({
+            cart:state => state.cart.cart
+        }),
         ...mapGetters(['cartTotalPrice'])
         // cart(){
         //     return this.$store.state.cart;

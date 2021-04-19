@@ -56,7 +56,7 @@ export default {
   //way-4
   computed: {
     //we can use here other computed properties
-    ...mapGetters(["cartItemCount"])
+    ...mapGetters('cart', ["cartItemCount"])
   }
 
 }

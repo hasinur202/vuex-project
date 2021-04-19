@@ -24,32 +24,20 @@
 import { mapState, mapGetters, mapActions } from "vuex";
 export default {
     methods:{
-        ...mapActions(["removeProductFromCart","clearCartItems","getCartItems"])
-
-        // removeProductFromCart(product){
-        //     this.$store.dispatch('removeProductFromCart',product);
-        // },
-
-        // clearCartItems(){
-        //     this.$store.dispatch('clearCartItems');
-        // }
+        ...mapActions('cart', ["removeProductFromCart","clearCartItems","getCartItems"])
     },
     computed: {
-        ...mapState({
-            cart:state => state.cart.cart
-        }),
-        ...mapGetters(['cartTotalPrice'])
-        // cart(){
-        //     return this.$store.state.cart;
-        // },
+        //it will work only when we use namespaced:true
+        ...mapState('cart',['cart']),
 
-        // cartTotalPrice(){
-        //     return this.$store.getters.cartTotalPrice;
-        // }
+        // ...mapState({
+        //     cart:state => state.cart.cart
+        // }),
+
+        ...mapGetters('cart', ['cartTotalPrice'])
     },
     mounted(){
         this.getCartItems();
-        // this.$store.dispatch('getCartItems');
     }
 }
 </script>

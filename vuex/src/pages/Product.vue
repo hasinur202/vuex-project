@@ -27,29 +27,22 @@ export default {
     },
 
     methods:{
-        ...mapActions(["addProductToCart", "getProduct"]),
+        ...mapActions('product', ["getProduct"]),
+        ...mapActions('cart', ["addProductToCart"]),
         addToCart(){
             this.addProductToCart({
                 product: this.product,
                 quantity:this.quantity
             });
-            // this.$store.dispatch('addProductToCart', {
-            //     product: this.product,
-            //     quantity:1
-            // });
         }
     },
 
     computed:{
-        ...mapState(['product']),
-        // product(){
-        //     return this.$store.state.product;
-        // }
+        ...mapState('product',['product']),
     },
 
     mounted(){
         this.getProduct(this.id);
-        // this.$store.dispatch('getProduct', this.id);
     }
 }
 </script>

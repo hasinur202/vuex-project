@@ -15,15 +15,14 @@ export default {
   },
 
   computed: {
-    ...mapState({
-      products: state => state.product.products,
-    }),
+    ...mapState('product',['products']),
     // products(){
     //   return this.$store.state.products;
     // }
   },
+
   methods:{
-    ...mapActions(['getProducts']),
+    ...mapActions('product', ['getProducts']),
   },
 
   mounted(){

@@ -8,7 +8,7 @@
                     {{ item.quantity }} X ${{ item.product.price }}
                 </div>
                 <div>
-                    <a href="#" class="badge badge-secondary">remove</a>
+                    <a @click.prevent="removeProductFromCart(item.product)" href="#" class="badge badge-secondary">remove</a>
                 </div>
             </div>
             <hr/>
@@ -22,6 +22,11 @@
 
 <script>
 export default {
+    methods:{
+        removeProductFromCart(product){
+            this.$store.dispatch('removeProductFromCart',product);
+        }
+    },
     computed: {
         cart(){
             return this.$store.state.cart;
@@ -30,6 +35,9 @@ export default {
         cartTotalPrice(){
             return this.$store.getters.cartTotalPrice;
         }
+    },
+    mounted(){
+        this.$store.dispatch('getCartItems');
     }
 }
 </script>

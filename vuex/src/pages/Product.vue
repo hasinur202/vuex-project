@@ -8,7 +8,7 @@
           <h3>${{ product.price }}</h3>
 
           <input type="text" class="text-center col-1 mr-2 p-1"/>
-          <button class="btn btn-primary">Add to Cart</button>
+          <button @click="addToCart" class="btn btn-primary">Add to Cart</button>
 
           <p class="mt-4">{{ product.description }}</p>
       </div>
@@ -18,6 +18,15 @@
 <script>
 export default {
     props: ['id'],
+
+    methods:{
+        addToCart(){
+            this.$store.dispatch('addProductToCart', {
+                product: this.product,
+                quantity:1
+            });
+        }
+    },
 
     computed:{
         product(){

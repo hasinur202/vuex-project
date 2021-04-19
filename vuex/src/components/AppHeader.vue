@@ -21,7 +21,6 @@
                   <div @click="$event.stopPropagation()">
                     <mini-cart/>
                   </div>
-
               
             </div>
           </div>
@@ -34,14 +33,30 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import MiniCart from './MiniCart.vue'
 export default {
   components: { MiniCart },
 
-  computed:{
-    cartItemCount(){
-      return this.$store.getters.cartItemCount;
-    }
+//way-1
+  // computed:{
+  //   cartItemCount(){
+  //     return this.$store.getters.cartItemCount;
+  //   }
+  // }
+
+//way-2
+  // computed: mapGetters({
+  //     cartCount: "cartItemCount"
+  // })
+
+//way-3
+  // computed: mapGetters(["cartItemCount"])
+
+  //way-4
+  computed: {
+    //we can use here other computed properties
+    ...mapGetters(["cartItemCount"])
   }
 
 }
